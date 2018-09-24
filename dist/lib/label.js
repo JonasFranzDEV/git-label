@@ -35,7 +35,7 @@ function createLabel(_ref, name, color) {
   var repo = _ref.repo;
 
   return (0, _request2.default)({
-    headers: { 'User-Agent': 'request', 'Authorization': 'token ' + token },
+    headers: { 'User-Agent': 'request', 'Content-Type': 'application/json', 'Authorization': 'token ' + token },
     url: api + '/' + repo + '/labels',
     form: JSON.stringify({ name: name, color: color }),
     method: 'POST',

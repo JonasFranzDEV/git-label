@@ -16,7 +16,7 @@ import request from '../lib/request';
  */
 export function createLabel({api, token, repo}, name, color) {
   return request({
-    headers: {'User-Agent': 'request', 'Authorization': `token ${token}`},
+    headers: {'User-Agent': 'request', 'Content-Type': 'application/json', 'Authorization': `token ${token}`},
     url: `${api}/${repo}/labels`,
     form: JSON.stringify({name, color}),
     method: 'POST',
