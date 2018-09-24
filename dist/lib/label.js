@@ -30,9 +30,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @return {Promise}
  */
 function createLabel(_ref, name, color) {
-  var api = _ref.api;
-  var token = _ref.token;
-  var repo = _ref.repo;
+  var api = _ref.api,
+      token = _ref.token,
+      repo = _ref.repo;
 
   return (0, _request2.default)({
     headers: { 'User-Agent': 'request', 'Content-Type': 'application/json', 'Authorization': 'token ' + token },
@@ -56,9 +56,9 @@ function createLabel(_ref, name, color) {
  * @return {Promise}
  */
 function deleteLabel(_ref2, name) {
-  var api = _ref2.api;
-  var token = _ref2.token;
-  var repo = _ref2.repo;
+  var api = _ref2.api,
+      token = _ref2.token,
+      repo = _ref2.repo;
 
   return (0, _request2.default)({
     headers: { 'User-Agent': 'request', 'Authorization': 'token ' + token },
@@ -80,9 +80,9 @@ function deleteLabel(_ref2, name) {
  * @return {Promise}
  */
 function getLabels(_ref3) {
-  var api = _ref3.api;
-  var token = _ref3.token;
-  var repo = _ref3.repo;
+  var api = _ref3.api,
+      token = _ref3.token,
+      repo = _ref3.repo;
 
   return (0, _request2.default)({
     headers: { 'User-Agent': 'request', 'Authorization': 'token ' + token },
@@ -102,8 +102,8 @@ function getLabels(_ref3) {
  * @return {Object} a properly formated label object that can be sent to GitHub
  */
 function formatLabel(_ref4) {
-  var name = _ref4.name;
-  var color = _ref4.color;
+  var name = _ref4.name,
+      color = _ref4.color;
 
   return { name: name, color: color.replace('#', '') };
 }
@@ -122,8 +122,8 @@ function formatLabel(_ref4) {
  */
 function createLabels(server, labels) {
   return Promise.all(labels.map(formatLabel).map(function (_ref5) {
-    var name = _ref5.name;
-    var color = _ref5.color;
+    var name = _ref5.name,
+        color = _ref5.color;
     return createLabel(server, name, color);
   }));
 }
@@ -141,8 +141,8 @@ function createLabels(server, labels) {
  */
 function deleteLabels(server, labels) {
   return Promise.all(labels.map(formatLabel).map(function (_ref6) {
-    var name = _ref6.name;
-    var color = _ref6.color;
+    var name = _ref6.name,
+        color = _ref6.color;
     return deleteLabel(server, name);
   }));
 }
