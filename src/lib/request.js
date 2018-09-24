@@ -1,5 +1,5 @@
 import request from 'request';
-
+request.debug = true;
 
 /**
  * Creates a "Promisfied" HTTPRequest object
