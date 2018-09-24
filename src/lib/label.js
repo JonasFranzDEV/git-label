@@ -18,7 +18,7 @@ export function createLabel({api, token, repo}, name, color) {
   return request({
     headers: {'User-Agent': 'request', 'Authorization': `token ${token}`},
     url: `${api}/${repo}/labels`,
-    body: JSON.stringify({name, color}),
+    body: {name, color},
     method: 'POST',
     json: true
   });
